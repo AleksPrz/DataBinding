@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBinding.FormPage"
+             Title="FormPage">
+    <VerticalStackLayout>
+        <Label Text="Nueva Persona"
+               FontAttributes="Bold"
+               FontSize="20"
+               HorizontalOptions="Center"
+               Margin="0,10,0,10"/>
+        <Grid RowSpacing="20"
+              Padding="60,15,60,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".4*"/>
+                <ColumnDefinition Width=".6*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <!-- Nombre -->
+            <Label Text="Nombre:"/>
+            <Entry Grid.Column="1"
+                   Text="{Binding Nombre}"/>
+
+            <!-- Apellido -->
+            <Label Text="Apellido:"
+                   Grid.Row="1"/>
+            <Entry Grid.Column="1"
+                   Grid.Row="1"
+                   Text="{Binding Apellido}"/>
+
+            <!-- Sexo -->
+            <Label Text="Sexo:"
+                   Grid.Row="2"/>
+            <Entry Grid.Column="1"
+                   Grid.Row="2"
+                   Text="{Binding Sexo}"/>
+            
+            <!-- Fh_nac -->
+            <Label Text="Fecha de nacimiento:"
+                   Grid.Row="3"/>
+            <DatePicker Grid.Column="1"
+                   Grid.Row="3"
+                   Date="{Binding Fh_nac}"/>
+
+            <!-- Id_rol -->
+            <Label Text="Id rol:"
+                  Grid.Row="4"/>
+            <Entry Grid.Column="1"
+                   Grid.Row="4"
+                   Keyboard="Numeric"
+                   Text="{Binding Id_rol}"/>
+
+            <Button Grid.Row="5"
+                    Grid.Column="1"
+                    Text="Crear"
+                    Clicked="Button_Clicked"
+                    MaximumWidthRequest="200"/>
+
+        </Grid>
+        <Button Text="Volver"
+                Clicked="Volver_Clicked"
+                Margin="0,15,0,0"
+                MaximumWidthRequest="200"/>
+    </VerticalStackLayout>
+</ContentPage>
